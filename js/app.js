@@ -15,19 +15,11 @@
     }[ch]));
   }
 
-  function languageLink(item, lang) {
-    const entry = item.languages && item.languages[lang];
+  function primaryEntry(item, lang) {
+    const langs = item.languages || {};
+    const entry = langs[lang] || langs.uk || langs.en;
     if (!entry) return null;
-    const isFull = entry.type === "full";
-    const label = lang === "uk" ? I18N.t("links.readUk") : I18N.t("links.readEn");
-    const cls = isFull ? "research-link primary" : "research-link secondary";
-    const target = isFull ? "" : ' target="_blank" rel="noopener"';
-    return `<a class="${cls}" href="${escapeHtml(entry.url)}"${target}>${escapeHtml(label)}</a>`;
-  }
-
-  function titleHref(item, lang) {
-    const entry = (item.languages && (item.languages[lang] || item.languages.uk || item.languages.en)) || null;
-    return entry ? entry.url : null;
+    return { ...entry, matchesLang: !!langs[lang] };
   }
 
   function renderCard(item) {
@@ -35,11 +27,14 @@
     const title = (item.title && (item.title[lang] || item.title.uk)) || "";
     const summary = (item.summary && (item.summary[lang] || item.summary.uk)) || "";
     const tags = (item.tags && (item.tags[lang] || item.tags.uk)) || [];
-    const links = [languageLink(item, "uk"), languageLink(item, "en")].filter(Boolean).join("");
-    const href = titleHref(item, lang);
+    const entry = primaryEntry(item, lang);
+    const href = entry ? entry.url : null;
     const titleHtml = href
       ? `<a href="${escapeHtml(href)}">${escapeHtml(title)}</a>`
       : escapeHtml(title);
+    const readLink = entry
+      ? `<a class="research-link primary" href="${escapeHtml(entry.url)}"${entry.matchesLang ? "" : ' target="_blank" rel="noopener"'}>${escapeHtml(I18N.t("links.readFull"))}</a>`
+      : "";
 
     return `
       <article class="research-card">
@@ -50,7 +45,7 @@
         <h2>${titleHtml}</h2>
         <p>${escapeHtml(summary)}</p>
         ${tags.length ? `<div class="research-card-tags">${tags.map((tag) => `<span class="research-tag">${escapeHtml(tag)}</span>`).join("")}</div>` : ""}
-        <div class="research-card-links">${links}</div>
+        <div class="research-card-links">${readLink}</div>
       </article>
     `;
   }
