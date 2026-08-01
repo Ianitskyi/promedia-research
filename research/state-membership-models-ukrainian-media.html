@@ -24,6 +24,7 @@
 </header>
 
 <main class="article-wrap">
+  <div class="article-layout">
 
   <nav class="article-toc" aria-label="Contents">
     <p class="article-toc-title">Contents</p>
@@ -42,6 +43,8 @@
       <li><a href="#appendix-2">Appendix 2</a></li>
     </ol>
   </nav>
+
+  <div class="article-main">
 
   <div class="article-note">
     <strong>Editorial note (Membership Puzzle Project &amp; Media Development Investment Fund):</strong>
@@ -911,6 +914,9 @@
     </p>
 
   </div>
+
+  </div>
+  </div>
 </main>
 
 <footer class="site-footer">
@@ -919,6 +925,30 @@
     <img src="../img/promedia-wordmark.svg" alt="ProMedia NGO" class="footer-logo" />
   </a>
 </footer>
+
+<script>
+(function () {
+  var tocLinks = Array.prototype.slice.call(document.querySelectorAll(".article-toc a"));
+  if (!tocLinks.length || !("IntersectionObserver" in window)) return;
+  var sections = tocLinks
+    .map(function (a) { return document.getElementById(a.getAttribute("href").slice(1)); })
+    .filter(Boolean);
+  function setActive(id) {
+    tocLinks.forEach(function (a) {
+      a.classList.toggle("active", a.getAttribute("href") === "#" + id);
+    });
+  }
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: "-15% 0px -70% 0px", threshold: 0 }
+  );
+  sections.forEach(function (el) { observer.observe(el); });
+})();
+</script>
 
 </body>
 </html>
