@@ -260,9 +260,12 @@ a { color: inherit; }
 .article-hero-inner { max-width: 760px; margin: 0 auto; }
 
 .article-hero h1 {
-  font-family: var(--serif);
+  font-family: var(--sans);
   font-size: clamp(26px, 4vw, 38px);
-  line-height: 1.2;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--ink);
   margin: 10px 0 14px;
 }
 
