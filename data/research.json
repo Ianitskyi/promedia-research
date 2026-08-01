@@ -11,7 +11,7 @@
       "en": ["membership", "media sustainability", "audience revenue"]
     },
     "title": {
-      "uk": "«Клуби читачів» і «Друзі»: стан клубних моделей у медіа в Україні",
+      "uk": "Стан клубних моделей у медіа в Україні",
       "en": "Readers’ Clubs and Friends: The State of Membership Models in Ukrainian Media"
     },
     "summary": {
@@ -20,9 +20,8 @@
     },
     "languages": {
       "uk": {
-        "type": "external",
-        "url": "https://voxukraine.org/stan-klubnyh-modelej-u-media-v-ukrayini/",
-        "publisher": "VoxUkraine"
+        "type": "full",
+        "url": "research/state-membership-models-ukrainian-media-uk.html"
       },
       "en": {
         "type": "full",
