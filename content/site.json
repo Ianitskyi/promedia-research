@@ -1,0 +1,55 @@
+{
+  "schemaVersion": 1,
+  "admin": {
+    "label": "research.promedia.report",
+    "repository": "Ianitskyi/promedia-research",
+    "editableFile": "content/site.json",
+    "description": "Text and SEO overrides for the research library. The CMS admin can edit this file through the GitHub API without touching application code or the research catalog."
+  },
+  "i18n": {
+    "uk": {
+      "meta": {
+        "indexTitle": "Дослідження ПроМедіа",
+        "indexDesc": "Дослідження медіаринку України від команди ПроМедіа та її партнерів: моделі стійкості, аудиторна робота, індустріальні дані."
+      },
+      "hero": {
+        "eyebrow": "Бібліотека досліджень",
+        "title": "Дослідження ПроМедіа",
+        "lede": "Тут поступово збираються дослідження, до яких причетна команда ПроМедіа: про моделі фінансової стійкості медіа, аудиторію та індустрію в цілому."
+      },
+      "list": {
+        "sectionLabel": "Усі дослідження",
+        "empty": "Дослідження скоро з'являться."
+      },
+      "links": {
+        "readFull": "Читати повністю",
+        "readUk": "Читати українською",
+        "readEn": "Read in English",
+        "original": "Оригінал публікації",
+        "pdf": "PDF"
+      }
+    },
+    "en": {
+      "meta": {
+        "indexTitle": "ProMedia Research",
+        "indexDesc": "Research on the Ukrainian media market from the ProMedia team and partners: sustainability models, audience engagement, industry data."
+      },
+      "hero": {
+        "eyebrow": "Research library",
+        "title": "ProMedia Research",
+        "lede": "A growing library of research the ProMedia team has been involved in: media sustainability models, audience engagement, and the industry at large."
+      },
+      "list": {
+        "sectionLabel": "All research",
+        "empty": "Research entries are coming soon."
+      },
+      "links": {
+        "readFull": "Read in full",
+        "readUk": "Читати українською",
+        "readEn": "Read in English",
+        "original": "Original publication",
+        "pdf": "PDF"
+      }
+    }
+  }
+}
