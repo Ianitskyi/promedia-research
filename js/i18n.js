@@ -9,9 +9,9 @@ const I18N_BASE = {
       indexDesc: "Дослідження медіаринку України від команди ПроМедіа та її партнерів.",
     },
     hero: {
-      eyebrow: "Бібліотека досліджень",
+      eyebrow: "Дослідження у сфері медіа та комунікацій",
       title: "Дослідження ПроМедіа",
-      lede: "Тут поступово збираються дослідження, до яких причетна команда ПроМедіа.",
+      lede: "Проведення досліджень - одна з суперсил громадської організації \"ПроМедіа\". Тут ми публікуємо аналітичні роботи, створені командою організації безпосередньо або ті, де наші представники брали участь як співавтори.",
     },
     list: { sectionLabel: "Усі дослідження", empty: "Дослідження скоро з'являться." },
     links: {
@@ -30,9 +30,9 @@ const I18N_BASE = {
       indexDesc: "Research on the Ukrainian media market from the ProMedia team and partners.",
     },
     hero: {
-      eyebrow: "Research library",
+      eyebrow: "Media and communications research",
       title: "ProMedia Research",
-      lede: "A growing library of research the ProMedia team has been involved in.",
+      lede: "Conducting research is one of the superpowers of ProMedia NGO. Here we publish analytical work created directly by the organization's team, or work where our representatives contributed as co-authors.",
     },
     list: { sectionLabel: "All research", empty: "Research entries are coming soon." },
     links: {
