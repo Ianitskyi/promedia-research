@@ -25,12 +25,21 @@
     return `<a class="${cls}" href="${escapeHtml(entry.url)}"${target}>${escapeHtml(label)}</a>`;
   }
 
+  function titleHref(item, lang) {
+    const entry = (item.languages && (item.languages[lang] || item.languages.uk || item.languages.en)) || null;
+    return entry ? entry.url : null;
+  }
+
   function renderCard(item) {
     const lang = I18N.lang;
     const title = (item.title && (item.title[lang] || item.title.uk)) || "";
     const summary = (item.summary && (item.summary[lang] || item.summary.uk)) || "";
     const tags = (item.tags && (item.tags[lang] || item.tags.uk)) || [];
     const links = [languageLink(item, "uk"), languageLink(item, "en")].filter(Boolean).join("");
+    const href = titleHref(item, lang);
+    const titleHtml = href
+      ? `<a href="${escapeHtml(href)}">${escapeHtml(title)}</a>`
+      : escapeHtml(title);
 
     return `
       <article class="research-card">
@@ -38,7 +47,7 @@
           <span class="research-card-year">${escapeHtml(item.year)}</span>
           <span>${escapeHtml((item.authors || []).join(", "))}</span>
         </div>
-        <h2>${escapeHtml(title)}</h2>
+        <h2>${titleHtml}</h2>
         <p>${escapeHtml(summary)}</p>
         ${tags.length ? `<div class="research-card-tags">${tags.map((tag) => `<span class="research-tag">${escapeHtml(tag)}</span>`).join("")}</div>` : ""}
         <div class="research-card-links">${links}</div>

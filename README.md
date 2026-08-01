@@ -35,7 +35,7 @@
 
 **«Readers' Clubs and Friends: The State of Membership Models in Ukrainian
 Media»** (Membership Puzzle Project & Media Development Investment Fund,
-2021) — авторське дослідження Андрія Яницького, автора цього розділу. Обидві
+2021) — авторське дослідження Андрія Яніцького, автора цього розділу. Обидві
 версії розміщено повністю на цьому сайті:
 
 - англійська — `research/state-membership-models-ukrainian-media.html`
