@@ -50,8 +50,8 @@
     },
     "languages": {
       "uk": {
-        "type": "external",
-        "url": "https://ianitskyi.github.io/promedia-membership-guide/index.html"
+        "type": "full",
+        "url": "membership-guide/index.html"
       },
       "en": {
         "type": "external",

@@ -1,0 +1,416 @@
+/* =========================================================
+   Спецпроєкт «Хендбук членства» — український переклад
+   Membership Guide (The Membership Puzzle Project / The
+   Lenfest Institute). Використовує токени з style.css
+   (кольори, шрифти), тут лише компоненти цієї сторінки.
+   ========================================================= */
+
+.mg-wrap {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 0 24px 60px;
+}
+
+.mg-wrap--wide { max-width: 1080px; }
+
+/* ---------- hero ---------- */
+
+.mg-hero {
+  background: var(--card);
+  border-bottom: 1px solid var(--border);
+  padding: 34px 24px 30px;
+}
+
+.mg-hero-inner {
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.mg-hero-inner--narrow { max-width: 760px; }
+
+.mg-hero h1 {
+  font-family: var(--sans);
+  font-weight: 800;
+  font-size: clamp(28px, 5vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -.015em;
+  color: var(--ink);
+  margin: 0 0 12px;
+}
+
+.mg-hero .lede { max-width: 640px; }
+
+.mg-hero-actions {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* ---------- crumb / chapter header ---------- */
+
+.mg-crumb {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin-bottom: 10px;
+}
+
+.mg-crumb a { color: var(--muted); text-decoration: none; font-weight: 600; }
+.mg-crumb a:hover { color: var(--ink); }
+
+.mg-part-label {
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin-bottom: 8px;
+}
+
+/* ---------- permission / attribution callout ---------- */
+
+.mg-permission {
+  margin: 26px 0 8px;
+  padding: 20px 22px;
+  background: var(--accent-tint);
+  border: 1px solid var(--accent);
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text);
+}
+
+.mg-permission h2 {
+  font-family: var(--serif);
+  font-size: 17px;
+  margin: 0 0 8px;
+}
+
+.mg-permission p { margin: 0 0 10px; }
+.mg-permission p:last-child { margin-bottom: 0; }
+
+.mg-permission .mg-credits {
+  color: var(--muted);
+  font-size: 12.5px;
+}
+
+.mg-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  border-radius: var(--radius-pill);
+  padding: 9px 16px;
+  font-weight: 700;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1.5px solid var(--ink);
+  color: var(--ink);
+  background: transparent;
+  transition: background .15s, color .15s;
+}
+
+.mg-btn:hover { background: var(--ink); color: #fff; }
+.mg-btn.solid { background: var(--ink); color: #fff; }
+.mg-btn.solid:hover { background: var(--ink-soft); }
+
+/* ---------- original-source link (per chapter) ---------- */
+
+.mg-original {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 4px 0 26px;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  border: 1.5px solid var(--border);
+  color: var(--muted);
+  font-size: 12.5px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.mg-original:hover { border-color: var(--ink); color: var(--ink); }
+
+/* ---------- parts / chapter grid (hub page) ---------- */
+
+.mg-part {
+  margin: 48px 0;
+}
+
+.mg-part-title {
+  font-family: var(--serif);
+  font-size: clamp(20px, 3vw, 26px);
+  margin: 0 0 4px;
+}
+
+.mg-part-desc {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0 0 18px;
+  max-width: 640px;
+}
+
+.mg-chapter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 14px;
+}
+
+.mg-chapter-card {
+  display: block;
+  background: var(--card);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  padding: 18px 20px;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow .15s, transform .15s;
+}
+
+.mg-chapter-card:hover { box-shadow: var(--shadow); transform: translateY(-2px); }
+
+.mg-chapter-card .num {
+  font-family: var(--serif);
+  font-size: 12.5px;
+  color: var(--accent-dark);
+  font-weight: 700;
+}
+
+.mg-chapter-card h3 {
+  font-family: var(--serif);
+  font-size: 17px;
+  margin: 6px 0 6px;
+  color: var(--ink);
+}
+
+.mg-chapter-card p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.5;
+}
+
+.mg-chapter-card .status {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: var(--radius-pill);
+}
+
+.mg-chapter-card .status.ready { background: var(--accent-tint); color: var(--accent-dark); }
+.mg-chapter-card .status.soon { background: var(--silver-tint); color: var(--silver); }
+
+/* ---------- desktop two-column layout (sticky in-chapter TOC) ---------- */
+
+.mg-main { min-width: 0; }
+
+@media (min-width: 1100px) {
+  .mg-wrap--chapter { max-width: 1180px; }
+
+  .mg-layout {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 1fr);
+    gap: 48px;
+    align-items: start;
+  }
+
+  .mg-toc {
+    position: sticky;
+    top: 20px;
+    max-height: calc(100vh - 40px);
+    overflow-y: auto;
+    align-self: start;
+  }
+
+  .mg-main { max-width: 720px; }
+}
+
+.mg-toc {
+  margin: 30px 0;
+  padding: 20px 22px;
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+
+.mg-toc h2 {
+  font-family: var(--serif);
+  font-size: 14px;
+  margin: 0 0 12px;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  font-weight: 700;
+}
+
+.mg-toc-list { margin: 0; padding: 0; list-style: none; }
+
+.mg-toc a {
+  display: block;
+  padding: 5px 8px;
+  border-radius: 6px;
+  color: var(--text);
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.mg-toc a:hover { color: var(--ink); background: var(--accent-tint); }
+
+.mg-toc a.active {
+  color: var(--ink);
+  background: var(--accent-tint);
+  font-weight: 700;
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+
+@media (min-width: 1100px) {
+  .mg-toc {
+    margin: 0;
+    padding: 4px 10px 4px 0;
+    background: transparent;
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+/* ---------- chapter content scaffolding ---------- */
+
+.mg-chapter-hero h1 {
+  font-family: var(--serif);
+  font-size: clamp(26px, 4vw, 36px);
+  line-height: 1.16;
+  margin: 0 0 14px;
+}
+
+.mg-section {
+  scroll-margin-top: 20px;
+  margin: 44px 0;
+}
+
+.mg-section h2 {
+  font-family: var(--serif);
+  font-size: clamp(20px, 3vw, 26px);
+  line-height: 1.2;
+  margin: 0 0 14px;
+}
+
+.mg-section p {
+  font-size: 15.5px;
+  line-height: 1.75;
+  margin: 0 0 16px;
+}
+
+.mg-section ul, .mg-section ol {
+  padding-left: 22px;
+  margin: 0 0 16px;
+}
+
+.mg-section li { font-size: 15px; line-height: 1.7; margin-bottom: 6px; }
+
+/* ---------- pull quote ---------- */
+
+.mg-quote {
+  margin: 22px 0;
+  padding: 4px 0 4px 20px;
+  border-left: 3px solid var(--accent);
+  font-family: var(--serif);
+  font-size: 17px;
+  line-height: 1.5;
+  color: var(--ink-soft);
+  font-style: italic;
+}
+
+/* ---------- source / disclosure note ---------- */
+
+.mg-source-note {
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.6;
+  margin: -8px 0 16px;
+}
+
+/* ---------- case-study teaser callout ---------- */
+
+.mg-case-note {
+  margin: 18px 0;
+  padding: 14px 18px;
+  background: var(--paper);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.mg-case-note .tag {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--accent-dark);
+  margin-bottom: 4px;
+}
+
+.mg-case-note strong {
+  display: block;
+  font-family: var(--serif);
+  font-size: 15px;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+
+.mg-case-note p { font-size: 13.5px; color: var(--muted); margin: 0; }
+
+/* ---------- next-chapter footer nav ---------- */
+
+.mg-next {
+  margin: 56px 0 20px;
+  padding: 22px 24px;
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.mg-next .label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.mg-next a.title {
+  font-family: var(--serif);
+  font-size: 18px;
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.mg-next a.title:hover { text-decoration: underline; }
+
+/* ---------- closing ---------- */
+
+.mg-closing {
+  margin: 60px 0 20px;
+  text-align: center;
+}
+
+.mg-closing p {
+  font-family: var(--serif);
+  font-size: 18px;
+  font-style: italic;
+  color: var(--ink-soft);
+  max-width: 520px;
+  margin: 0 auto;
+}

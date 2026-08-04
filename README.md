@@ -44,6 +44,16 @@ Media»** (Membership Puzzle Project & Media Development Investment Fund,
   (переклад, уперше опублікований [VoxUkraine](https://voxukraine.org/stan-klubnyh-modelej-u-media-v-ukrayini/),
   3 листопада 2021; структура розділів відповідає публікації VoxUkraine).
 
+## Посібник з розвитку спільнот
+
+`membership-guide/` — повна копія сайту-посібника (15 розділів, український
+переклад The Membership Guide від The Membership Puzzle Project та The
+Lenfest Institute, авторизований правовласниками; оригінальний репозиторій —
+`Ianitskyi/promedia-membership-guide`). Розміщено як підрозділ саме тут
+(`research.promedia.report/membership-guide/`), а не окремим посиланням на
+`github.io`, щоб уся бібліотека досліджень жила під одним доменом. Усі шляхи
+всередині — відносні, тож підрозділ повністю самодостатній.
+
 ## Деплой і DNS
 
 Сайт — статичні файли, деплоїться GitHub Actions (`actions/deploy-pages`) на
