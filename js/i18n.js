@@ -70,9 +70,34 @@ const I18N = {
   lang: "uk",
 
   detect() {
+    const urlLang = new URLSearchParams(location.search).get("lang");
+    if (urlLang === "uk" || urlLang === "en") {
+      localStorage.setItem(I18N_STORAGE_KEY, urlLang);
+      return urlLang;
+    }
     const saved = localStorage.getItem(I18N_STORAGE_KEY);
     if (saved === "uk" || saved === "en") return saved;
     return (navigator.language || "uk").toLowerCase().startsWith("en") ? "en" : "uk";
+  },
+
+  // Дозволяє прийти з promedia.report (чи іншого субдомену) з ?lang=en і
+  // одразу відкрити цю сторінку англійською; посилання на інші субдомени
+  // (наприклад "← ПроМедіа") теж несуть поточну мову через ?lang=.
+  syncUrl() {
+    const url = new URL(location.href);
+    if (url.searchParams.get("lang") !== this.lang) {
+      url.searchParams.set("lang", this.lang);
+      history.replaceState(null, "", url);
+    }
+    document.querySelectorAll("a.home-btn, a[data-cross-site]").forEach((a) => {
+      try {
+        const linkUrl = new URL(a.getAttribute("href"), location.href);
+        linkUrl.searchParams.set("lang", this.lang);
+        a.setAttribute("href", linkUrl.toString());
+      } catch (error) {
+        // Лишаємо посилання як є, якщо не вдалось розпарсити.
+      }
+    });
   },
 
   async loadOverrides() {
@@ -110,6 +135,7 @@ const I18N = {
     document.querySelectorAll(".lang-btn").forEach((btn) => {
       btn.classList.toggle("active", btn.dataset.lang === this.lang);
     });
+    this.syncUrl();
     document.dispatchEvent(new CustomEvent("i18n:change", { detail: { lang: this.lang } }));
   },
 
