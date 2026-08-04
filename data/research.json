@@ -28,5 +28,35 @@
         "url": "research/state-membership-models-ukrainian-media.html"
       }
     }
+  },
+  {
+    "id": "membership-guide-ukrainian-translation",
+    "year": 2026,
+    "date": "2026-01-01",
+    "authors": ["The Membership Puzzle Project", "The Lenfest Institute"],
+    "publisher": "The Membership Puzzle Project & The Lenfest Institute (переклад — ГО «ПроМедіа»)",
+    "originalUrl": "https://membershipguide.org/handbook",
+    "tags": {
+      "uk": ["членство", "спільнота", "посібник"],
+      "en": ["membership", "community", "handbook"]
+    },
+    "title": {
+      "uk": "Посібник з розвитку спільнот",
+      "en": "The Membership Guide"
+    },
+    "summary": {
+      "uk": "Практичний посібник The Membership Puzzle Project та The Lenfest Institute про розвиток спільноти для медіа — від першої ідеї до утримання учасників. Повний український переклад (усі 15 розділів) підготувала ГО «ПроМедіа» з дозволу правовласників.",
+      "en": "A practical guide by the Membership Puzzle Project and the Lenfest Institute on building reader communities for newsrooms — from first idea to member retention. Full Ukrainian translation (all 15 chapters) by ProMedia NGO, authorized by the rights holders."
+    },
+    "languages": {
+      "uk": {
+        "type": "external",
+        "url": "https://ianitskyi.github.io/promedia-membership-guide/index.html"
+      },
+      "en": {
+        "type": "external",
+        "url": "https://membershipguide.org/handbook"
+      }
+    }
   }
 ]
