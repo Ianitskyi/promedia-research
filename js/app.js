@@ -64,7 +64,7 @@
 
   async function load() {
     try {
-      const res = await fetch("data/research.json", { cache: "no-store" });
+      const res = await fetch("/data/research.json", { cache: "no-store" });
       items = await res.json();
     } catch (error) {
       items = [];

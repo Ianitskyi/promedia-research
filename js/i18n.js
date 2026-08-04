@@ -151,7 +151,23 @@ const I18N = {
     await this.loadOverrides();
     this.apply();
     document.querySelectorAll(".lang-btn").forEach((btn) => {
-      btn.addEventListener("click", () => this.setLang(btn.dataset.lang));
+      btn.addEventListener("click", () => {
+        if (btn.dataset.lang === this.lang) return;
+        const path = location.pathname;
+        const isRootUk = path === "/" || path === "/index.html";
+        const isRootEn = path === "/en/" || path === "/en/index.html";
+        if (isRootUk && btn.dataset.lang === "en") {
+          localStorage.setItem(I18N_STORAGE_KEY, "en");
+          location.href = "/en/";
+          return;
+        }
+        if (isRootEn && btn.dataset.lang === "uk") {
+          localStorage.setItem(I18N_STORAGE_KEY, "uk");
+          location.href = "/";
+          return;
+        }
+        this.setLang(btn.dataset.lang);
+      });
     });
   },
 };
