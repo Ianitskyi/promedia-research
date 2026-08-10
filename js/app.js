@@ -22,11 +22,18 @@
     return { ...entry, matchesLang: !!langs[lang] };
   }
 
+  function localizedList(field, lang) {
+    if (!field) return [];
+    if (Array.isArray(field)) return field;
+    return field[lang] || field.uk || [];
+  }
+
   function renderCard(item) {
     const lang = I18N.lang;
     const title = (item.title && (item.title[lang] || item.title.uk)) || "";
     const summary = (item.summary && (item.summary[lang] || item.summary.uk)) || "";
-    const tags = (item.tags && (item.tags[lang] || item.tags.uk)) || [];
+    const tags = localizedList(item.tags, lang);
+    const authors = localizedList(item.authors, lang);
     const entry = primaryEntry(item, lang);
     const href = entry ? entry.url : null;
     const titleHtml = href
@@ -40,7 +47,7 @@
       <article class="research-card">
         <div class="research-card-meta">
           <span class="research-card-year">${escapeHtml(item.year)}</span>
-          <span>${escapeHtml((item.authors || []).join(", "))}</span>
+          <span>${escapeHtml(authors.join(", "))}</span>
         </div>
         <h2>${titleHtml}</h2>
         <p>${escapeHtml(summary)}</p>

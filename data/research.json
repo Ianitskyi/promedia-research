@@ -3,7 +3,10 @@
     "id": "state-membership-models-ukrainian-media",
     "year": 2021,
     "date": "2021-07-30",
-    "authors": ["Андрій Яніцький"],
+    "authors": {
+      "uk": ["Андрій Яніцький"],
+      "en": ["Andrii Ianitskyi"]
+    },
     "publisher": "Membership Puzzle Project & Media Development Investment Fund",
     "originalUrl": "https://membershippuzzle.org/state-membership-models-ukrainian-media/",
     "tags": {
@@ -33,7 +36,10 @@
     "id": "membership-guide-ukrainian-translation",
     "year": 2021,
     "date": "2021-01-01",
-    "authors": ["The Membership Puzzle Project", "The Lenfest Institute"],
+    "authors": {
+      "uk": ["The Membership Puzzle Project", "The Lenfest Institute"],
+      "en": ["The Membership Puzzle Project", "The Lenfest Institute"]
+    },
     "publisher": "The Membership Puzzle Project & The Lenfest Institute (переклад — ГО «ПроМедіа»)",
     "originalUrl": "https://membershipguide.org/handbook",
     "tags": {
