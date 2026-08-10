@@ -414,3 +414,22 @@
   max-width: 520px;
   margin: 0 auto;
 }
+
+.mg-footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 18px;
+  margin-top: 4px;
+}
+
+.mg-footer-nav a {
+  color: var(--muted);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.mg-footer-nav a:hover {
+  color: var(--ink);
+  text-decoration: underline;
+}
