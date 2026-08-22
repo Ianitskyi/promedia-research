@@ -32,7 +32,7 @@ const I18N_BASE = {
     hero: {
       eyebrow: "Research library",
       title: "Media and Communications Research",
-      lede: "Conducting research is one of the superpowers of ProMedia NGO. Here we publish analytical work created directly by the organization's team, or work where our representatives contributed as co-authors.",
+      lede: "In this section, we publish research, analytical work, and practical guides authored by ProMedia NGO as well as by partner organizations.",
     },
     list: { sectionLabel: "All research", empty: "Research entries are coming soon." },
     links: {
