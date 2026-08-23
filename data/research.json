@@ -64,5 +64,38 @@
         "url": "https://membershipguide.org/handbook"
       }
     }
+  },
+  {
+    "id": "engaged-journalism-ukrainian-media-during-war",
+    "year": 2026,
+    "date": "2026-05-04",
+    "authors": {
+      "uk": ["Андрій Яніцький"],
+      "en": ["Andrii Ianitskyi"]
+    },
+    "publisher": "Науковий журнал «Український інформаційний простір» (Ukrainian Information Space), № 17",
+    "originalUrl": "https://ukrinfospace.knukim.edu.ua/article/view/359190",
+    "tags": {
+      "uk": ["журналістика залучення", "медійні спільноти", "довіра до медіа", "membership"],
+      "en": ["engaged journalism", "media communities", "trust in media", "membership"]
+    },
+    "title": {
+      "uk": "Зміни в роботі новинних медіа України під час війни: теоретичний аспект",
+      "en": "Changes in Ukrainian News Media Activities During the War: Theoretical Aspect"
+    },
+    "summary": {
+      "uk": "Наукова стаття про журналістику залучення й розвиток читацьких спільнот навколо українських медіа під час війни. Авторська 7-компонентна модель аналізу медійних спільнот, з прикладами The Kyiv Independent, The Ukrainians Media та Ukraїner.",
+      "en": "An academic article on engaged journalism and the rise of reader communities around Ukrainian media during the war. Proposes an original seven-component model for analysing media communities, illustrated with The Kyiv Independent, The Ukrainians Media, and Ukraїner."
+    },
+    "languages": {
+      "uk": {
+        "type": "full",
+        "url": "research/engaged-journalism-ukrainian-media-during-war-uk.html"
+      },
+      "en": {
+        "type": "full",
+        "url": "research/engaged-journalism-ukrainian-media-during-war.html"
+      }
+    }
   }
 ]
