@@ -19,7 +19,9 @@
     const langs = item.languages || {};
     const entry = langs[lang] || langs.uk || langs.en;
     if (!entry) return null;
-    return { ...entry, matchesLang: !!langs[lang] };
+    // Відносні адреси рахуються від кореня сайту, щоб вони працювали і з /en/, /crh/.
+    const url = /^(https?:)?\//.test(entry.url) ? entry.url : "/" + entry.url;
+    return { ...entry, url, matchesLang: !!langs[lang] };
   }
 
   function localizedList(field, lang) {
