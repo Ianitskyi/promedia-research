@@ -74,7 +74,7 @@ const I18N_ROOTS = { uk: "/", en: "/en/", crh: "/crh/" };
 // (promedia.report) отримують українську адресу.
 const NETWORK_URLS = {
   home: { uk: "https://promedia.report", en: "https://promedia.report/en", crh: "https://promedia.report" },
-  news: { uk: "https://news.promedia.report/", en: "https://news.promedia.report/?lang=en", crh: "https://news.promedia.report/?lang=crh" },
+  news: { uk: "https://news.promedia.report/", en: "https://news.promedia.report/en/", crh: "https://news.promedia.report/crh/" },
   communities: { uk: "https://communities.promedia.report/", en: "https://communities.promedia.report/en/", crh: "https://communities.promedia.report/crh/" },
   ratings: { uk: "https://ratings.promedia.report/", en: "https://ratings.promedia.report/en/", crh: "https://ratings.promedia.report/crh/" },
   research: { uk: "https://research.promedia.report/", en: "https://research.promedia.report/en/", crh: "https://research.promedia.report/crh/" },
@@ -112,24 +112,27 @@ const I18N = {
   dict: I18N_BASE,
   lang: "uk",
 
+  // Мова — корінь сторінки: / (uk), /en/, /crh/. Старі адреси з ?lang=
+  // переводимо на відповідний корінь.
   detect() {
+    const rootLang = i18nRootLang(location.pathname);
     const urlLang = new URLSearchParams(location.search).get("lang");
-    if (I18N_LANGS.includes(urlLang)) {
-      localStorage.setItem(I18N_STORAGE_KEY, urlLang);
-      return urlLang;
+    if (rootLang && I18N_LANGS.includes(urlLang) && urlLang !== rootLang) {
+      location.replace(I18N_ROOTS[urlLang] + location.hash);
+    }
+    if (rootLang) {
+      localStorage.setItem(I18N_STORAGE_KEY, rootLang);
+      return rootLang;
     }
     const saved = localStorage.getItem(I18N_STORAGE_KEY);
-    if (I18N_LANGS.includes(saved)) return saved;
-    return (navigator.language || "uk").toLowerCase().startsWith("en") ? "en" : "uk";
+    return I18N_LANGS.includes(saved) ? saved : "uk";
   },
 
-  // Дозволяє прийти з promedia.report (чи іншого субдомену) з ?lang=en і
-  // одразу відкрити цю сторінку англійською; посилання на інші субдомени
-  // (наприклад "← ПроМедіа") теж несуть поточну мову через ?lang=.
+  // Посилання на інші сайти мережі ведуть на їхню версію тією самою мовою.
   syncUrl() {
     const url = new URL(location.href);
-    if (url.searchParams.get("lang") !== this.lang) {
-      url.searchParams.set("lang", this.lang);
+    if (url.searchParams.has("lang")) {
+      url.searchParams.delete("lang");
       history.replaceState(null, "", url);
     }
     document.querySelectorAll("a[data-network]").forEach((a) => {
@@ -141,15 +144,6 @@ const I18N = {
     });
     document.querySelectorAll("a.home-btn").forEach((a) => {
       a.setAttribute("href", NETWORK_URLS.home[this.lang] || NETWORK_URLS.home.uk);
-    });
-    document.querySelectorAll("a[data-cross-site]").forEach((a) => {
-      try {
-        const linkUrl = new URL(a.getAttribute("href"), location.href);
-        linkUrl.searchParams.set("lang", this.lang);
-        a.setAttribute("href", linkUrl.toString());
-      } catch (error) {
-        // Лишаємо посилання як є, якщо не вдалось розпарсити.
-      }
     });
   },
 
