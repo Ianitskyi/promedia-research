@@ -13,7 +13,7 @@
 | `data/research.json` | Каталог досліджень: назва, опис, рік, автори, теги, посилання на UA/EN версії |
 | `content/site.json` | Тексти хіро-блоку та SEO (UA/EN), редаговані через адмінку ProMedia без правок коду |
 | `css/style.css` | Стилі ПроМедіа: navy `#0d0c5c` + accent `#ffac33`, Playfair Display + Montserrat — узгоджено з `ratings.promedia.report` |
-| `js/i18n.js` | UA/EN перемикач мови + накладання `content/site.json` поверх вбудованого словника |
+| `js/i18n.js` | UA/EN/QT (кримськотатарська латинкою, `/crh/`, `?lang=crh`) перемикач мови + накладання `content/site.json` поверх вбудованого словника |
 | `js/app.js` | Рендер карток досліджень з `data/research.json` на головній |
 
 ## Як додати нове дослідження
@@ -21,7 +21,7 @@
 1. Додати текст (якщо публікується повністю на сайті) у `research/<slug>.html`
    — за зразком `research/state-membership-models-ukrainian-media.html`.
 2. Додати запис у масив `data/research.json`: `id`, `year`, `date`, `authors`,
-   `title`/`summary` (uk/en), `tags`, `languages.uk`/`languages.en`
+   `title`/`summary` (uk/en, опційно crh), `tags`, `languages.uk`/`languages.en`
    (`type: "full"` — сторінка на цьому сайті, `type: "external"` — посилання
    на зовнішню публікацію).
 3. Commit і push у `main` — GitHub Actions (`deploy-pages.yml`) автоматично
