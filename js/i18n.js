@@ -58,7 +58,7 @@ const I18N_BASE = {
     list: { sectionLabel: "Episi tedqiqatlar", empty: "Tedqiqatlar yaqında peyda olacaq." },
     links: {
       readFull: "Tolu oqumaq",
-      readUk: "Читати українською",
+      readUk: "Ukrain tilinde oqumaq",
       readEn: "Read in English",
       original: "Neşirniñ asılı",
       pdf: "PDF",
