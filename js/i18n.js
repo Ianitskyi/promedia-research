@@ -63,7 +63,7 @@ const I18N_BASE = {
       original: "Neşirniñ asılı",
       pdf: "PDF",
     },
-    footer: { initiative: "Tesebbüs" },
+    footer: { initiative: "Teşebbüs" },
   },
 };
 
