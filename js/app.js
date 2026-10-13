@@ -30,6 +30,24 @@
     return field[lang] || field.uk || [];
   }
 
+  function coverHtml(item, lang, href, title) {
+    const isEnglishCover = lang === "en" && item.coverImageUrlEn;
+    const raw = isEnglishCover ? item.coverImageUrlEn : item.coverImageUrl;
+    if (!raw) return "";
+    let url;
+    try {
+      url = new URL(raw, window.location.origin);
+      if (!["https:", "http:"].includes(url.protocol)) return "";
+    } catch (_) { return ""; }
+    const data = isEnglishCover ? item.coverCropDataEn : item.coverCropData;
+    const point = data && (data.feed || data.desktop);
+    const x = point && Number.isFinite(Number(point.x)) ? Math.min(100, Math.max(0, Number(point.x))) : 50;
+    const y = point && Number.isFinite(Number(point.y)) ? Math.min(100, Math.max(0, Number(point.y))) : 50;
+    const image = '<img class="research-card-image" src="' + escapeHtml(url.href) +
+      '" alt="' + escapeHtml(title) + '" loading="lazy" style="object-position:' + x + '% ' + y + '%" />';
+    return href ? '<a class="research-card-cover-link" href="' + escapeHtml(href) + '">' + image + '</a>' : image;
+  }
+
   function renderCard(item) {
     const lang = I18N.lang;
     const title = (item.title && (item.title[lang] || item.title.uk)) || "";
@@ -47,6 +65,7 @@
 
     return `
       <article class="research-card">
+        ${coverHtml(item, lang, href, title)}
         <div class="research-card-meta">
           <span class="research-card-year">${escapeHtml(item.year)}</span>
           <span>${escapeHtml(authors.join(", "))}</span>
