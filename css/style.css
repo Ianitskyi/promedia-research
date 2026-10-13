@@ -567,3 +567,7 @@ html[lang="crh"] .network-crh { display: inline; }
   .network-nav { padding-inline: 16px; gap: 6px 15px; }
   .network-footer { gap: 8px 14px; }
 }
+
+/* Optional editor-managed research covers */
+.research-card-cover-link {display:block; overflow:hidden; border-radius:10px;}
+.research-card-image {display:block; width:100%; aspect-ratio:3 / 2; height:auto; object-fit:cover; border-radius:10px;}
