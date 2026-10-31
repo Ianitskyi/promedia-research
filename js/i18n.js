@@ -48,7 +48,7 @@ const I18N_BASE = {
     nav: { promedia: "← ProMedia", research: "← Tedqiqatlar" },
     meta: {
       indexTitle: "ProMedia tedqiqatları",
-      indexDesc: "ProMedia ekibi ve ortaqlarınıñ Ukraina mediya bazarı aqqında tedqiqatları.",
+      indexDesc: "ProMedia ekibi ve ortaqlarınıñ Ukrayina mediya bazarı aqqında tedqiqatları.",
     },
     hero: {
       eyebrow: "Tedqiqatlar kitaphanesi",
@@ -80,7 +80,7 @@ const NETWORK_URLS = {
   research: { uk: "https://research.promedia.report/", en: "https://research.promedia.report/en/", crh: "https://research.promedia.report/crh/" },
   atlas: { uk: "https://atlas.promedia.report/", en: "https://atlas.promedia.report/en/", crh: "https://atlas.promedia.report/crh/" },
 };
-const NETWORK_ARIA = { uk: "Проєкти ПроМедіа", en: "ProMedia projects", crh: "ProMedia loyihaları" };
+const NETWORK_ARIA = { uk: "Проєкти ПроМедіа", en: "ProMedia projects", crh: "ProMedia leyhaları" };
 
 function i18nRootLang(path) {
   if (path === "/" || path === "/index.html") return "uk";

@@ -13,8 +13,12 @@
 | `data/research.json` | Каталог досліджень: назва, опис, рік, автори, теги, посилання на UA/EN версії |
 | `content/site.json` | Тексти хіро-блоку та SEO (UA/EN), редаговані через адмінку ProMedia без правок коду |
 | `css/style.css` | Стилі ПроМедіа: navy `#0d0c5c` + accent `#ffac33`, Playfair Display + Montserrat — узгоджено з `ratings.promedia.report` |
-| `js/i18n.js` | UA/EN/QT (кримськотатарська латинкою, `/crh/`, `?lang=crh`) перемикач мови + накладання `content/site.json` поверх вбудованого словника |
+| `js/i18n.js` | UA/EN/QT (кримськотатарська латинкою, `/crh/`; старі адреси з `?lang=` переадресовуються) перемикач мови + накладання `content/site.json` поверх вбудованого словника |
 | `js/app.js` | Рендер карток досліджень з `data/research.json` на головній |
+
+## Кримськотатарська версія
+
+Правила кримськотатарського перекладу (джерела, обов'язковий глосарій, абетка, самоперевірка) — єдині для всієї мережі: [CRIMEAN_TATAR_TRANSLATION_RULES.md](https://github.com/ianitskyi/promedia-news/blob/main/docs/CRIMEAN_TATAR_TRANSLATION_RULES.md). Тут їх не дублюємо; зміни вносимо спершу туди.
 
 ## Як додати нове дослідження
 
